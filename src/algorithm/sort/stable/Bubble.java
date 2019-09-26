@@ -1,5 +1,9 @@
 package algorithm.sort.stable;
 
+import algorithm.sort.SortUtil;
+
+import javax.xml.soap.SOAPConnection;
+
 /**
  * 冒泡排序
  * 概念：
@@ -14,39 +18,23 @@ package algorithm.sort.stable;
  * @author ltw
  * on 2019-08-26.
  */
-public class Bubble {
-
+public class Bubble extends SortUtil {
     public static void main(String[] args) {
-        Integer[] choas = {3, 5, 1, 5, 1, 8, 0, 3, 7, 1, 5};
         Bubble bubble = new Bubble();
-        bubble.bubleSort(choas);
-
-        for (Integer result : choas) {
-            System.out.println(result);
-        }
+        bubble.check();
     }
 
-    public void bubleSort(Integer[] choas) {
-        /**
-         * 最多需要length次交换过程
-         */
-        for (int i = 0; i < choas.length; i++) {
-            boolean flag = false;
-            /**
-             * 将一个数字冒泡到相映位置
-             */
-            for (int j = 0; j < choas.length - i - 1; ++j) {
-                //数据交换
-                if (choas[j] > choas[j + 1]) {  //最好情况O(n) 这边完全不用交换，本来都是有序的
-                    int tmp = choas[j]; //唯一需要的额外空间
-                    choas[j] = choas[j + 1];
-                    choas[j + 1] = tmp;
-                    flag = true; //判断本次有数据需要交换，
+    @Override
+    public void sortArray(int[] origin) {
+        for (int j = 0; j < origin.length; j++) {
+            for (int i = 1; i < origin.length - j; i++) { //每次子循环只需要便利 length-j个
+                //1.相邻两位比较 如果前一个比后一个大,就互换
+                if (origin[i - 1] > origin[i]) {
+                    swap(origin, i, i - 1);
                 }
             }
-            if (!flag)
-                break;
-
         }
+        printResult(origin);
     }
+
 }

@@ -34,6 +34,6 @@ public class SelectionSort extends SortUtil {
 
             posMin = j;
         }
-        printResult(origin);
+//        printResult(origin);
     }
 }
