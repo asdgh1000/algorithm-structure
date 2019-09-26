@@ -17,7 +17,7 @@ public abstract class SortDataCheck {
         return arr;
     }
 
-    public boolean check() {
+    public void check() {
         int[] array1 = generateRandomArray();
         int[] array2 = new int[array1.length];
         System.arraycopy(array1, 0, array2, 0, array1.length);
@@ -29,10 +29,10 @@ public abstract class SortDataCheck {
                 same = false;
             }
         }
-        return same;
+        System.out.println(same ? "Right" : "Wrong");
     }
 
 
-    public abstract void  sortArray(int[] origin);
+    public abstract void sortArray(int[] origin);
 
 }

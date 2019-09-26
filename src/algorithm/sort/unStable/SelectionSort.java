@@ -16,7 +16,7 @@ import algorithm.sort.SortUtil;
 public class SelectionSort extends SortUtil {
     public static void main(String[] args) {
         SelectionSort selectionSort = new SelectionSort();
-        System.out.println(selectionSort.check());
+        selectionSort.check();
     }
 
 
@@ -32,7 +32,6 @@ public class SelectionSort extends SortUtil {
                 }
             }
 
-            printResult(origin);
             posMin = j;
         }
         printResult(origin);
