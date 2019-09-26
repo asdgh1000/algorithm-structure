@@ -24,12 +24,17 @@ public class Bubble extends SortUtil {
 
     @Override
     public void sortArray(int[] origin) {
+        boolean flag = false; //增加flag 优化代码 保证在最好情况下 时间复杂度是 O(n)
         for (int j = 0; j < origin.length; j++) {
             for (int i = 1; i < origin.length - j; i++) { //每次子循环只需要便利 length-j个
                 //1.相邻两位比较 如果前一个比后一个大,就互换
                 if (origin[i - 1] > origin[i]) {
                     swap(origin, i, i - 1);
+                    flag = true;
                 }
+            }
+            if (!flag) {
+                break;
             }
         }
         printResult(origin);
