@@ -32,6 +32,9 @@ import java.util.Queue;
  * 它的两个子树已经是符合条件的最大堆，我们很容易就可以将其再维护成一个符合条件的最大堆。
  * 将堆顶元素与两个孩子结点中最大的那个进行交换，然后再对互换的子树递归地进行维护。
  *
+ * 默认pq的实现是 小顶堆
+ * 改造成大顶堆:
+ * PriorityQueue<Integer> pq = new PriorityQueue<>((i1, i2) -> i2 - i1);
  * @author ltw
  * on 2019-10-05.
  */
