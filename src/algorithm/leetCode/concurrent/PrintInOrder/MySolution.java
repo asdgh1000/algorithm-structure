@@ -3,6 +3,7 @@ package algorithm.leetCode.concurrent.PrintInOrder;
 import java.util.concurrent.CountDownLatch;
 
 /**
+ * 多线程
  * Suppose we have a class:
  *
  * public class Foo {
