@@ -2,11 +2,10 @@ package algorithm.leetCode.interview.No04;
 
 public class Solution {
     public TreeNode sortedArrayToBST(int[] nums) {
-        int middle = (nums.length - 1) / 2;
-        int left = middle - 1;
-        int right = middle + 1;
-        TreeNode root = new TreeNode(nums[middle]);
-        return sort(nums, left, right, root);
+        int left = 0;
+        int right = nums.length - 1;
+
+        return helper(nums, 0, right);
 
     }
 //    class Solution {
@@ -19,16 +18,16 @@ public class Solution {
 //        }
 //    }
 
-//    private TreeNode helper(int[] nums,int left,int right){
-//        if(left==right){
-//            return null;
-//        }
-//        int mid=left+(right-left)/2;
-//        TreeNode node = new TreeNode(nums[mid]);
-//        node.left = helper(nums,left,mid);
-//        node.right = helper(nums,mid+1,right);
-//        return node;
-//    }
+    private TreeNode helper(int[] nums, int left, int right) {
+        if (left == right) {
+            return null;
+        }
+        int mid = left + (right - left) / 2;
+        TreeNode node = new TreeNode(nums[mid]);
+        node.left = helper(nums, left, mid);
+        node.right = helper(nums, mid + 1, right);
+        return node;
+    }
 
 
     public static void main(String[] args) {
