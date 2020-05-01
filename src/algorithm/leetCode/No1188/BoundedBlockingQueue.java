@@ -59,13 +59,13 @@ class BoundedBlockingQueue {
     }
 
     public int size() {
-//        return atomicInteger.get();
+        return atomicInteger.get();
 //        try {
 //            lock.lock();
 //            return size;
 //        } finally {
 //            lock.unlock();
 //        }
-//    }
     }
+
 }
