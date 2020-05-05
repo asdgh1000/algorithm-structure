@@ -11,6 +11,7 @@ import java.util.List;
  * TreeNode right;
  * TreeNode(int x) { val = x; }
  * }
+ * 中序遍历时，判断当前节点是否大于中序遍历的前一个节点，如果大于，说明满足 BST，继续遍历；否则直接返回 false。
  */
 class Solution {
     public static void main(String[] args) {
